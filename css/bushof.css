@@ -1,0 +1,310 @@
+* {
+	box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+	float: left;
+	width: 50%;
+	padding: 10px;
+
+	
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+ @media screen and (max-width: 700px)
+ {
+ .column {
+   width: 100%;
+ }
+}
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+
+  .einleitung {
+	width: 100%;
+	padding-top: 4em;
+	padding-bottom: 4em;
+	padding-left:30%;
+	padding-right: 10%;
+
+
+	
+  }
+  @media screen and (max-width: 700px)
+  {
+  .einleitung {
+	padding: 0%;
+	
+  }
+}
+
+
+.pdf {
+	width: 100%;
+	padding-left:30%;
+	padding-right: 10%;
+	background-color: yellow;
+
+	
+  }
+  @media screen and (max-width: 700px)
+  {
+  .pdf {
+	padding: 0%;
+	
+  }
+}
+
+.jpg {
+
+display: block;
+max-width: 100%;
+max-width: 100%;
+
+	
+  }
+
+.leftside, .rightside {
+
+	height: fit-content;
+	width: 50%;
+	min-width: 400px;
+
+
+}
+
+.leftside {
+background: red;
+}
+
+.rightside 
+{
+	background: blue;
+	}
+
+.wrapper {
+    display: grid; /* establish a grid container */
+    grid-template-columns: repeat(2, 1fr); /* 20 columns */
+    grid-auto-rows: 50px; /* row height for illustration */
+	border: 1px;
+  }
+  
+  .wrapper div {
+    border: 1px solid;
+    grid-column: span 2; /* span two columns */ 
+    /* flexbox to center content*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	border: 1px;
+  }
+  
+  .wrapper .a {
+    grid-column: span 2;  /* span ten columns */ 
+	border: 1px;
+  }
+  
+  .wrapper .a1 {
+    grid-column: span 20; /* span all 20 columns */ 
+  }
+  
+  .wrapper .a2 {
+    grid-row: span 5; /* span five rows */ 
+  }
+  
+  .wrapper .a9,.wrapper .a10{
+    grid-column: span 5; /* span five columns */ 
+  }
+
+
+
+/* Quadratrisches Layout*/ 
+
+  .square-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+	grid-auto-rows: 1fr;
+	grid-auto-flow: dense;
+    border: 1px solid;
+}
+
+.square-container::before {
+	content: '';
+	height: 0;
+	padding-bottom: 100%;
+	grid-row: 1 / 1;
+	grid-column: 1 / 1;
+}
+
+.square-container > *:first-child {
+	grid-row: 1 / 1;
+	grid-column: 1 / 1;
+}
+
+.square-container > * {
+	
+	border: 1px solid black ;
+	position: relative;
+}
+
+
+
+.square-container img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+
+#blog,
+#kontakt {
+	background: url(https://upload.wikimedia.org/wikipedia/commons/a/a1/Niccolo_de_Niccoli_italic_handwriting.jpg);
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font: 3rem bold;
+	text-decoration: none;
+	color: red;
+}
+
+#kontakt {
+	grid-column: -2 / -1;
+}
+
+*/ 
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+
+img {
+	padding-top: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+}
+
+
+
+
+body {
+	background-color: white;
+	color: black;
+	margin: clamp(5px, 3em, 40px);
+}
+
+.mail {
+	font-size: 80 px;
+	color: lightgray
+}
+
+a {
+	text-decoration: underline;
+	font-style: normal;
+	color: black;
+
+	
+}
+
+a:hover{color: red;
+}
+
+
+p {
+	font-size:clamp(20px, 3.2vw, 50px);
+	font-family: sans-serif;
+}
+p3 {
+	font-size:clamp(24px, 2.4vw, 45px);
+	font-family:Times,"Times New Roman",serif;
+text-rendering: optimizeLegibility;
+font-feature-settings: "liga" 1, "kern";
+	
+}
+
+p2 {font-size: clamp (1rem, 3vw, 1.4rem);
+	font-family: sans-serif;
+}
+
+t {
+	font-size:clamp(20px, 1.6vw, 100px);
+	font-family: sans-serif;
+	line-height: 1.4;
+}
+
+t3 {color: black;
+	font-size:clamp(20px, 1.2vw, 100px);
+	font-family: sans-serif;
+	line-height: 1.6;
+	font-weight: bold;
+}
+
+t2	{color:black;
+	font-size:clamp(12px, 1.2vw, 100px);
+	font-family: sans-serif;
+	line-height: 1;
+	font-weight: bold;
+}
+t4	{color:black;
+	font-size:clamp(12px, 1vw, 100px);
+	font-family: sans-serif;
+	line-height: 1;
+	font-weight: bold;
+}
+a {
+	font-weight: 400;
+}
+
+
+
+footer {
+	margin-top: 3em;
+	padding-top: 1em;
+	color: #000;
+	background-color: #fff;
+	text-align: center;
+	font-style: normal;
+	font-weight: 400;
+	margin: 0;
+	font-size: 1.3em;
+	line-height: 1.3;
+	letter-spacing: 0.05em;
+	}
+
+
+	
+
+
+
+	
+	
+	  .inner{
+		
+	color: #000;
+	  }
+
+
+.box {box-sizing: border-box;
+	height: 20em;
+	border: 1px solid black
+}
+
+
+		
+		.header { background: yellow !important; }
+
